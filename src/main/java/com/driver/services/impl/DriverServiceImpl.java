@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.driver.model.Driver;
 import com.driver.repository.DriverRepository;
-
+//import java.sql.Driver;
 @Service
 public class DriverServiceImpl implements DriverService {
 
@@ -22,8 +22,8 @@ public class DriverServiceImpl implements DriverService {
 	public void register(String mobile, String password){
 		//Save a driver in the database having given details and a cab with ratePerKm as 10 and availability as True by default.
 		Driver driver = new Driver(mobile,password);
-		Cab c=new Cab(10);
-		c.setDriver((java.sql.Driver) driver);
+		Cab c = new Cab(10);
+		c.setDriver(driver);
 		driverRepository3.save(driver);
 	}
 
